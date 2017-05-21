@@ -42,6 +42,7 @@
                 }
                 catch (TimeoutException)
                 {
+                    Console.WriteLine("Caught TimeoutException. Continuing...");
                 }
             }
         }

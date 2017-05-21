@@ -31,7 +31,7 @@
 
             var solutionVersion = solutionEntity["version"].ToString();
 
-            Console.WriteLine("Solution Version: " + solutionVersion);
+            Console.WriteLine("Solution Version: {0}", solutionVersion);
 
             return FormatSolutionVersion(solutionVersion);
         }

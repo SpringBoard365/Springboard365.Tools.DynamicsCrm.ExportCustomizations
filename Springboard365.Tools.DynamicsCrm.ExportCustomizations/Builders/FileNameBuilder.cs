@@ -29,7 +29,7 @@
 
             fileName += ".zip";
 
-            Console.WriteLine("FileName: " + fileName);
+            Console.WriteLine("FileName: {0}", fileName);
 
             return fileName;
         }
