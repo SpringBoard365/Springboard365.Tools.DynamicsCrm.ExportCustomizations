@@ -4,7 +4,9 @@
     {
         public static void Main(string[] args)
         {
-            new ExportCustomizationClass(args);
+            var exportClass = new ExportCustomizationClass(args);
+            exportClass.Initialize();
+            exportClass.Run();
         }
     }
 }
