@@ -39,6 +39,7 @@
                     var fileName = fileNameBuilder.Build(parameters.DestinationFolder, parameters.SolutionUniqueName, parameters.SolutionType, parameters.AppendVersionToOutputFile);
 
                     fileWriter.Write(fileName, compressedXml);
+                    break;
                 }
                 catch (TimeoutException)
                 {
