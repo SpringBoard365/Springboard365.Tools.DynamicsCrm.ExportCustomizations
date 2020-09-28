@@ -7,7 +7,7 @@
     {
         public void Write(string fileName, byte[] compressedXml)
         {
-            Console.WriteLine("Filename: {0}", fileName);
+            Console.WriteLine("Writing to FileName: {0}", fileName);
             CreateIfNotExists(fileName);
 
             using (var fileStream = new FileStream(fileName, FileMode.Create))
@@ -21,7 +21,7 @@
         {
             var path = Path.GetDirectoryName(fileName);
 
-            if (path == null || Directory.Exists(path))
+            if (string.IsNullOrEmpty(path) || Directory.Exists(path))
             {
                 return;
             }

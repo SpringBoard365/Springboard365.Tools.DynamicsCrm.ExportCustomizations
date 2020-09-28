@@ -14,8 +14,14 @@
         public string Build(string destinationFolder, string solutionUniqueName, string solutionType, bool appendVersionToOutputFile)
         {
             Console.WriteLine("Building Filename.");
+            var fileName = string.Empty;
 
-            var fileName = destinationFolder + "\\" + solutionUniqueName;
+            if (!string.IsNullOrEmpty(destinationFolder))
+            {
+                fileName = destinationFolder + "\\" + solutionUniqueName;
+            }
+
+            fileName += solutionUniqueName;
 
             if (appendVersionToOutputFile)
             {

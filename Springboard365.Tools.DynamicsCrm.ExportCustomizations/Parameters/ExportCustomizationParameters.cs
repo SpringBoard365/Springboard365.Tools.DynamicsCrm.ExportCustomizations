@@ -8,7 +8,7 @@
         [CommandLineArgument(ArgumentType.Required, "SolutionUniqueName", Description = "Show the file name.", Shortcut = "name")]
         public string SolutionUniqueName { get; set; }
 
-        [CommandLineArgument(ArgumentType.Required, "DestinationFolder", Description = "Show the file name.", Shortcut = "folder")]
+        [CommandLineArgument(ArgumentType.Optional, "DestinationFolder", Description = "Show the file name.", Shortcut = "folder")]
         public string DestinationFolder { get; set; }
 
         [CommandLineArgument(ArgumentType.Required, "SolutionType", Description = "Show the Import job file save path.", Shortcut = "type")]
