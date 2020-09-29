@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+	<id>$id$</id>
+	<version>$version$</version>
+    <title>$id$</title>
+    <authors>$author$</authors>
+    <repository type="git" url="$repo$"/>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright $author$ 2020</copyright>
+    <tags>$tags$</tags>
+  </metadata>
+  <files>
+    <file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.ExportCustomizations.exe" target="tools\ExportCustomizations.exe" />
+	<file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.ExportCustomizations.exe.config" target="tools\ExportCustomizations.exe.config" />
+  </files>
+</package>
