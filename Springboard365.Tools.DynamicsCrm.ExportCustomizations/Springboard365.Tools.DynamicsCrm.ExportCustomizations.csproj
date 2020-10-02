@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Build\ExportCustomizations.bat" />
     <None Include="Build\ExportCustomizations.exe.config" />
     <None Include="Build\NuGetPush.bat" />
     <None Include="packages.config" />
