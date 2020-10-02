@@ -11,8 +11,7 @@
         private ISolutionExporter solutionExporter;
         private ExportCustomizationParameters parameters;
 
-        public ExportCustomizationClass(string[] args)
-            : base(new ExportCustomizationParameters(), args)
+        public ExportCustomizationClass(string[] args) : base(new ExportCustomizationParameters(), args)
         {
         }
 
