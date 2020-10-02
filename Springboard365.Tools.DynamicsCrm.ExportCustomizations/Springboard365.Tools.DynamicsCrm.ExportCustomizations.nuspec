@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+	<id>$id$</id>
+	<version>$version$</version>
+    <title>$id$</title>
+    <authors>$author$</authors>
+    <repository type="git" url="$repo$"/>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright $author$ 2020</copyright>
+    <tags>$tags$</tags>
+  </metadata>
+  <files>
+    <file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.ExportCustomizations.exe" target="tools\ExportCustomizations.exe" />
+	<file src="Build\ExportCustomizations.exe.config" target="tools\ExportCustomizations.exe.config" />
+    <file src="bin\$Configuration$\Microsoft.Crm.Sdk.Proxy.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.Crm.Sdk.Proxy.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.Rest.ClientRuntime.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.Xrm.Sdk.Deployment.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.Xrm.Sdk.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.Xrm.Sdk.Workflow.dll" target="tools" />
+	<file src="bin\$Configuration$\Microsoft.Xrm.Tooling.Connector.dll" target="tools" />
+	<file src="bin\$Configuration$\Newtonsoft.Json.dll" target="tools" />
+	<file src="bin\$Configuration$\Springboard365.Tools.CommandLine.Core.dll" target="tools" />
+	<file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.Common.dll" target="tools" />
+  </files>
+</package>

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Springboard 365 Ltd")]
 [assembly: AssemblyProduct("Springboard365.Tools.DynamicsCrm.ExportCustomizations")]
-[assembly: AssemblyCopyright("Copyright © Springboard 365 Ltd 2017")]
+[assembly: AssemblyCopyright("Copyright © Springboard 365 Ltd 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

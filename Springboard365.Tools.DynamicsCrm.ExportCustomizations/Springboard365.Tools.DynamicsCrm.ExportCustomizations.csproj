@@ -12,6 +12,8 @@
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,7 +69,7 @@
       <HintPath>..\packages\Springboard365.Tools.CommandLine.Core.1.1.0\lib\net40\Springboard365.Tools.CommandLine.Core.dll</HintPath>
     </Reference>
     <Reference Include="Springboard365.Tools.DynamicsCrm.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Springboard365.Tools.DynamicsCrm.Common.2.0.0-alpha01\lib\net462\Springboard365.Tools.DynamicsCrm.Common.dll</HintPath>
+      <HintPath>..\packages\Springboard365.Tools.DynamicsCrm.Common.2.0.0\lib\net462\Springboard365.Tools.DynamicsCrm.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
@@ -111,8 +113,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Build\ExportCustomizations.bat" />
+    <None Include="Build\ExportCustomizations.exe.config" />
     <None Include="Build\NuGetPush.bat" />
     <None Include="packages.config" />
+    <None Include="Springboard365.Tools.DynamicsCrm.ExportCustomizations.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
