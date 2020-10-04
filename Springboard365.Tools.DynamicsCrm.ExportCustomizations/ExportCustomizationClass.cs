@@ -44,6 +44,14 @@
                 {
                     Console.WriteLine("Caught TimeoutException. Continuing...");
                 }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Caught Exception. Continuing...");
+                }
+                finally
+                {
+                    ProgressBar.DrawProgressBar(100, 100, "Finished");
+                }
             }
         }
     }

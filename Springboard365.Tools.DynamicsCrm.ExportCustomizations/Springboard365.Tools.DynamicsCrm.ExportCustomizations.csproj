@@ -103,6 +103,7 @@
     <Compile Include="Builders\IFileNameBuilder.cs" />
     <Compile Include="Builders\FileNameBuilder.cs" />
     <Compile Include="Exporters\SolutionExporter.cs" />
+    <Compile Include="ProgressBar.cs" />
     <Compile Include="Readers\ISolutionReader.cs" />
     <Compile Include="Readers\SolutionReader.cs" />
     <Compile Include="Writers\FileWriter.cs" />

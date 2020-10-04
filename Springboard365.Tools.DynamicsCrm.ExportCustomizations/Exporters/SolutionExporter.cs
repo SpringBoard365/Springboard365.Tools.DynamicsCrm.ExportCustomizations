@@ -23,9 +23,9 @@
                 SolutionName = solutionName
             };
 
-            Console.WriteLine("Solution export start.");
+            ProgressBar.DrawProgressBar(0, 100, "Solution export start.");
             var exportSolutionResponse = (ExportSolutionResponse)organizationService.Execute(exportSolutionRequest);
-            Console.WriteLine("Solution export end.");
+            ProgressBar.DrawProgressBar(20, 100, "Solution export end.");
 
             return exportSolutionResponse.ExportSolutionFile;
         }
