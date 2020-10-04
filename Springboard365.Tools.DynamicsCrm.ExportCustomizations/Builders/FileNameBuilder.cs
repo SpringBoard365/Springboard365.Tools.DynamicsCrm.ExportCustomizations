@@ -1,7 +1,5 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.ExportCustomizations
 {
-    using System;
-
     public class FileNameBuilder : IFileNameBuilder
     {
         private readonly ISolutionReader solutionReader;
@@ -13,7 +11,7 @@
 
         public string Build(string destinationFolder, string solutionUniqueName, string solutionType, bool appendVersionToOutputFile)
         {
-            Console.WriteLine("Building Filename.");
+            ProgressBar.DrawProgressBar(30, 100, "Building Filename start.");
             var fileName = string.Empty;
 
             if (!string.IsNullOrEmpty(destinationFolder))
@@ -35,7 +33,7 @@
 
             fileName += ".zip";
 
-            Console.WriteLine("FileName: {0}", fileName);
+            ProgressBar.DrawProgressBar(40, 100, "Building Filename end - " + fileName + ".");
 
             return fileName;
         }

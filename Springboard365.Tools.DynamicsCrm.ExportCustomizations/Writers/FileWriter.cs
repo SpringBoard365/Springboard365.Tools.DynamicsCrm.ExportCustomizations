@@ -2,18 +2,42 @@
 {
     using System;
     using System.IO;
+    using System.Linq;
 
     public class FileWriter : IFileWriter
     {
         public void Write(string fileName, byte[] compressedXml)
         {
-            Console.WriteLine("Writing to FileName: {0}", fileName);
             CreateIfNotExists(fileName);
+
+            var progressMesssage = string.Format("Writing file to FileName: {0}", fileName);
+            int fileTotal = compressedXml.Count();
+            int lastFileProgress = fileTotal;
+            int currentStage = -1;
+            int stageTotal = 50;
 
             using (var fileStream = new FileStream(fileName, FileMode.Create))
             {
-                Console.WriteLine("Writing file.");
-                fileStream.Write(compressedXml, 0, compressedXml.Length);
+                var currentProgress = 0;
+                foreach (var byteValue in compressedXml)
+                {
+                    fileStream.WriteByte(byteValue);
+                    if (lastFileProgress > 1)
+                    {
+                        int fileProgress = fileTotal / --lastFileProgress;
+                        var a = stageTotal - fileProgress;
+                        if (a > 0)
+                        {
+                            currentProgress = stageTotal / a;
+                        }
+                    }
+
+                    if (currentProgress != currentStage)
+                    {
+                        currentStage = currentProgress;
+                        ProgressBar.DrawProgressBar(currentProgress + 40, 100, progressMesssage);
+                    }
+                }
             }
         }
 
