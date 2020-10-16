@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Springboard365.Tools.DynamicsCrm.ExportCustomizations", "Springboard365.Tools.DynamicsCrm.ExportCustomizations\Springboard365.Tools.DynamicsCrm.ExportCustomizations.csproj", "{AC9D38C0-FFCB-4703-8A5C-6D1324D0778F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportCustomizations", "src\ExportCustomizations.csproj", "{AC9D38C0-FFCB-4703-8A5C-6D1324D0778F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{DA34E431-3CCE-4255-8BEB-3E104CFF842E}"
+	ProjectSection(SolutionItems) = preProject
+		Build\ExportCustomizations.bat = Build\ExportCustomizations.bat
+		Build\ExportCustomizations.exe.config = Build\ExportCustomizations.exe.config
+		Build\NuGetPush.bat = Build\NuGetPush.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,7 +13,7 @@
   </metadata>
   <files>
     <file src="bin\$Configuration$\Springboard365.Tools.DynamicsCrm.ExportCustomizations.exe" target="tools\ExportCustomizations.exe" />
-	<file src="Build\ExportCustomizations.exe.config" target="tools\ExportCustomizations.exe.config" />
+	<file src="..\Build\ExportCustomizations.exe.config" target="tools\ExportCustomizations.exe.config" />
     <file src="bin\$Configuration$\Microsoft.Crm.Sdk.Proxy.dll" target="tools" />
 	<file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.dll" target="tools" />
 	<file src="bin\$Configuration$\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll" target="tools" />
