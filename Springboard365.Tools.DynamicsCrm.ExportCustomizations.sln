@@ -7,8 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportCustomizations", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{DA34E431-3CCE-4255-8BEB-3E104CFF842E}"
 	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
 		Build\ExportCustomizations.bat = Build\ExportCustomizations.bat
 		Build\ExportCustomizations.exe.config = Build\ExportCustomizations.exe.config
+		src\ExportCustomizations.nuspec = src\ExportCustomizations.nuspec
 		Build\NuGetPush.bat = Build\NuGetPush.bat
 	EndProjectSection
 EndProject
