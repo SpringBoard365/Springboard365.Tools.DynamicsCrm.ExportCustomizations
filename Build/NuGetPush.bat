@@ -1,6 +1,17 @@
-SET packageVersion=2.0.0-beta02
+SET packageVersion=2.0.1-beta01
 
-NuGet.exe pack ../Springboard365.Tools.DynamicsCrm.ExportCustomizations.nuspec -Build -symbols -Version %packageVersion% -Properties Configuration=Release;id="Springboard365.Tools.DynamicsCrm.ExportCustomizations";author="Springboard 365 Ltd";repo="https://github.com/SpringBoard365/Springboard365.Tools.DynamicsCrm.ExportCustomizations";description="Export customizations application to allow for automation of Application Lifecycle Management.";tags="Microsoft Dynamics 365 CRM 2011 2013 2015 2016 SDK XRM 365 D365 Power Platform";
+SET configuration=Release
+SET id="Springboard365.Tools.DynamicsCrm.ExportCustomizations";
+SET author="Springboard 365 Ltd";
+SET repo="https://github.com/SpringBoard365/Springboard365.Tools.DynamicsCrm.ExportCustomizations";
+SET description="Export customizations application to allow for automation of Power Platform Application Lifecycle Management.";
+SET tags="Springboard365BuildTool PowerPlatformBuildTool Dynamics365BuildTool DynamicsCrmBuildTool XrmBuildTool";
+
+dotnet build ../src/CommandLine.Core.csproj -c  %configuration% -p:Version=%packageVersion% -f net462 --nologo
+
+pause
+
+NuGet.exe pack ../src/ExportCustomizations.nuspec -Build -symbols -Version %packageVersion% -Properties Configuration=%configuration%;id=%id%;author=%author%;repo=%repo%;description=%description%;tags=%tags%;
 
 NuGet.exe push Springboard365.Tools.DynamicsCrm.ExportCustomizations.%packageVersion%.nupkg -Source "https://api.nuget.org/v3/index.json"
 
