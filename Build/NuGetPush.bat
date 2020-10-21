@@ -1,4 +1,5 @@
-SET packageVersion=2.0.1-beta01
+@echo off
+SET packageVersion=2.0.0-beta04
 
 SET configuration=Release
 SET id="Springboard365.Tools.DynamicsCrm.ExportCustomizations";
@@ -7,7 +8,9 @@ SET repo="https://github.com/SpringBoard365/Springboard365.Tools.DynamicsCrm.Exp
 SET description="Export customizations application to allow for automation of Power Platform Application Lifecycle Management.";
 SET tags="Springboard365BuildTool PowerPlatformBuildTool Dynamics365BuildTool DynamicsCrmBuildTool XrmBuildTool";
 
-dotnet build ../src/CommandLine.Core.csproj -c  %configuration% -p:Version=%packageVersion% -f net462 --nologo
+dotnet restore ../Springboard365.Tools.DynamicsCrm.ExportCustomizations.sln
+
+dotnet build ../Springboard365.Tools.DynamicsCrm.ExportCustomizations.sln -c  %configuration% -p:Version=%packageVersion% -f net462 --nologo
 
 pause
 
