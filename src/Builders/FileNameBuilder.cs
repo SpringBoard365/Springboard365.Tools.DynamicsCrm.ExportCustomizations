@@ -1,5 +1,7 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.ExportCustomizations
 {
+    using Springboard365.Tools.CommandLine.Core;
+
     public class FileNameBuilder : IFileNameBuilder
     {
         private readonly ISolutionReader solutionReader;
@@ -11,30 +13,17 @@
 
         public string Build(string destinationFolder, string solutionUniqueName, string solutionType, bool appendVersionToOutputFile)
         {
-            ProgressBar.DrawProgressBar(30, 100, "Building Filename start.");
-            var fileName = string.Empty;
+            ConsoleLogger.LogProgress("Building Filename start.", new ProgressBarOptions { Progress = 30, Total = 100 });
 
-            if (!string.IsNullOrEmpty(destinationFolder))
-            {
-                fileName = destinationFolder + "\\" + solutionUniqueName;
-            }
+            var path = string.IsNullOrEmpty(destinationFolder) ? "." : destinationFolder;
 
-            fileName += solutionUniqueName;
+            var versionNumber = appendVersionToOutputFile ? $"_{solutionReader.GetSolutionVersion(solutionUniqueName)}" : string.Empty;
 
-            if (appendVersionToOutputFile)
-            {
-                fileName += "_" + solutionReader.GetSolutionVersion(solutionUniqueName);
-            }
+            var packagetype = solutionType.ToLowerInvariant().Equals("managed") ? $"_{solutionType.ToLowerInvariant()}" : string.Empty;
 
-            if (solutionType.ToLowerInvariant().Equals("managed"))
-            {
-                fileName += "_" + solutionType;
-            }
+            var fileName = $"{path}\\{solutionUniqueName}{versionNumber}{packagetype}.zip";
 
-            fileName += ".zip";
-
-            ProgressBar.DrawProgressBar(40, 100, "Building Filename end - " + fileName + ".");
-
+            ConsoleLogger.LogProgress($"Building Filename end - {fileName}.", new ProgressBarOptions { Progress = 40, Total = 100 });
             return fileName;
         }
     }

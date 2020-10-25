@@ -1,6 +1,7 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.ExportCustomizations
 {
     using System;
+    using Springboard365.Tools.CommandLine.Core;
     using Springboard365.Tools.DynamicsCrm.Common;
 
     public class ExportCustomizationClass : CrmToolBase
@@ -11,7 +12,8 @@
         private ISolutionExporter solutionExporter;
         private ExportCustomizationParameters parameters;
 
-        public ExportCustomizationClass(string[] args) : base(new ExportCustomizationParameters(), args)
+        public ExportCustomizationClass(string[] args)
+            : base(new ExportCustomizationParameters(), args)
         {
         }
 
@@ -38,19 +40,17 @@
                     var fileName = fileNameBuilder.Build(parameters.DestinationFolder, parameters.SolutionUniqueName, parameters.SolutionType, parameters.AppendVersionToOutputFile);
 
                     fileWriter.Write(fileName, compressedXml);
+
+                    ConsoleLogger.LogProgress("Finished", new ProgressBarOptions { Progress = 100, Total = 100, });
                     break;
                 }
                 catch (TimeoutException)
                 {
-                    Console.WriteLine("Caught TimeoutException. Continuing...");
+                    ConsoleLogger.LogFatal($"Caught TimeoutException. Continuing...");
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Caught Exception. Continuing...");
-                }
-                finally
-                {
-                    ProgressBar.DrawProgressBar(100, 100, "Finished");
+                    ConsoleLogger.LogFatal($"Caught '{e.Message}'. Continuing...");
                 }
             }
         }

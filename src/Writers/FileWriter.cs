@@ -1,8 +1,8 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.ExportCustomizations
 {
-    using System;
     using System.IO;
     using System.Linq;
+    using Springboard365.Tools.CommandLine.Core;
 
     public class FileWriter : IFileWriter
     {
@@ -35,7 +35,7 @@
                     if (currentProgress != currentStage)
                     {
                         currentStage = currentProgress;
-                        ProgressBar.DrawProgressBar(currentProgress + 40, 100, progressMesssage);
+                        ConsoleLogger.LogProgress(progressMesssage, new ProgressBarOptions { Progress = currentProgress + 40, Total = 100 });
                     }
                 }
             }
@@ -50,7 +50,7 @@
                 return;
             }
 
-            Console.WriteLine("Creating Directory: {0}", path);
+            ConsoleLogger.LogMessage($"Creating Directory: {path}");
             Directory.CreateDirectory(path);
         }
     }

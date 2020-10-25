@@ -1,9 +1,8 @@
 ﻿namespace Springboard365.Tools.DynamicsCrm.ExportCustomizations
 {
-    using System;
     using Microsoft.Crm.Sdk.Messages;
     using Microsoft.Xrm.Sdk;
-    using Microsoft.Xrm.Tooling.Connector;
+    using Springboard365.Tools.CommandLine.Core;
 
     public class SolutionExporter : ISolutionExporter
     {
@@ -16,16 +15,15 @@
 
         public byte[] ExportSolutionFile(string solutionName, bool exportManagedSolution)
         {
-            CrmServiceClient.MaxConnectionTimeout = new TimeSpan(0, 10, 0);
             var exportSolutionRequest = new ExportSolutionRequest
             {
                 Managed = exportManagedSolution,
-                SolutionName = solutionName
+                SolutionName = solutionName,
             };
 
-            ProgressBar.DrawProgressBar(0, 100, "Solution export start.");
+            ConsoleLogger.LogProgress("Solution export start.", new ProgressBarOptions { Progress = 0, Total = 100 });
             var exportSolutionResponse = (ExportSolutionResponse)organizationService.Execute(exportSolutionRequest);
-            ProgressBar.DrawProgressBar(20, 100, "Solution export end.");
+            ConsoleLogger.LogProgress("Solution export end.", new ProgressBarOptions { Progress = 20, Total = 100 });
 
             return exportSolutionResponse.ExportSolutionFile;
         }
