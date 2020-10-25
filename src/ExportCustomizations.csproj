@@ -9,7 +9,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Springboard365.Tools.DynamicsCrm.ExportCustomizations</RootNamespace>
-    <AssemblyName>Springboard365.Tools.DynamicsCrm.ExportCustomizations</AssemblyName>
+    <AssemblyName>ExportCustomizations</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
